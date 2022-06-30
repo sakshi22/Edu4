@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/application_for_job.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+</head>
+<body>
+
+<!--Main section starts here-->
+ <form method="POST" enctype="multipart/form-data" action="">
+  {% csrf_token %}
+<div class="container">
+    <h1 class="donate", style=text-align:center;>Apply</h1>
+    <div style="color: red">
+        {% if message %}
+          <b>{{ message }}</b>
+        {% endif %}
+      </div>
+        <br>
+          <label for="fname"><b>Full Name</b></label>
+          <input type="text" id="fname" name="fname" placeholder="Full Name">
+       <label for="Email"><b>Email-id</b></label>
+          <input type="text" id="Email" name="email" placeholder="Your email id">
+    <label for="Phone"><b>Phone Number</b></label>
+          <input type="text" id="Phone" name="phone" placeholder="Phone number">
+        <label for="address"><b>Address</b></label>
+        <textarea id="address" name="address" placeholder="Address" style="height:200px"></textarea>
+          <!-- <input type="text" id="address" name="address" placeholder="Address"> -->
+        <label for="country"><b>Country</b></label>
+          <input type="text" id="country" name="country" placeholder="Country">
+        <label for="uoc"><b>University/College</b></label>
+          <input type="text" id="uoc" name="uoc" placeholder="University/College">
+        <label for="yos"><b>Year of study</b></label>
+          <input type="text" id="yos" name="yos" placeholder="Year of study">
+    <label for="myfile"><b>Upload Transcript:</b></label>
+  <input type="file" id="myfile" name="myfile1"><br><br>
+  
+  <label for="myfile"><b>Upload an SOP:</b></label>
+  <input type="file" id="myfile" name="myfile2"><br><br>
+    
+     <input type="checkbox" id="privacy" name="privacy" value="privacy-policies">
+  <label for="privacy"> I agree to the Privacy Policy</label><br>
+  <input type="checkbox" id="terms" name="terms" value="terms-conditions">
+  <label for="terms">I agree to the Terms and Conditions</label><br>
+  
+          <input type="submit" value="Submit">
+      
+        </form>
+      </div>
+
+    
+</body>
+</html>
